@@ -2,26 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 // 1st Method
 
-Route::get('/post', function () {
-    return view('post');
-});
+// Route::get('/post/{id?}/', function (string $id = null) {
+//     if ($id) {
+//         return "<h1>Post ID : ". $id ."</h1>";
+//     } else {
+//         return "<h1>No ID Found!</h1>";
+//     }    
+// })->where('id', '[0-9]+');
+
+Route::get('/post/{id?}/comment/{commentid?}', function (string $id = null, string $comment = null) {
+    if ($id) {
+        return "<h1>Post ID : ". $id ."</h1><h2>". $comment ."</h2>";
+    } else {
+        return "<h1>No ID Found!</h1>";
+    }    
+})->where('id', '[0-9]+')->whereAlpha('commentid');
 
 // 2nd Method
 
@@ -31,4 +32,4 @@ Route::get('/post', function () {
 
 // 3rd Method
 
-// Route::view('post', '/hello');
+// Route::view('/hello', 'post');

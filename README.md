@@ -1,3 +1,3 @@
 # Laravel Project
 
-Practicing Laravel Framework
+Practice the Laravel Framework

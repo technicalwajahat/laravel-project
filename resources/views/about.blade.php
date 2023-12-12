@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Hello, Wajahat Asif</h1>
+    <a href="{{ route('home') }}">Home Page</a>
     <a href="{{ route('myPost') }}">Post Page</a>
-    <a href="{{ route('about') }}">About Page</a>
 </body>
 </html>

@@ -7,8 +7,61 @@
     <title>Home</title>
 </head>
 <body>
+    @include('pages.header', ['name' => 'Yahoo Baba'])
+
     <h1>Hello, Wajahat Asif</h1>
     <a href="{{ route('myPost') }}">Post Page</a>
     <a href="{{ route('about') }}">About Page</a>
+    <br><br>
+    {{ 5 + 2 }}
+    <br><br>
+    {{ "Hello World" }}
+    <br><br>
+    {{ "<h1>Hello World</h1>" }}
+    <br><br>
+    {!! "<h1>Wajahat Awan</h1>" !!}
+    {{-- {!! "<script>alert('KING!!!')</script>" !!} --}}
+    {{-- !Comment Statment! --}}
+
+    @php
+        $user = "King Wajahat Awan!";
+        $names = ["Salman Khan", "Shahrukh Khan", "Tiger Shroff"]
+    @endphp
+
+    <ul>
+    @foreach ($names as $name)
+        <li>{{ $loop->count }} {{ $name }}</li>
+    @endforeach
+    </ul>
+
+    <ul>
+        @foreach ($names as $name)
+            <li>{{ $loop->iteration }} {{ $name }}</li>
+        @endforeach
+    </ul>
+
+    <ul>
+        @foreach ($names as $name)
+            <li>{{ $loop->index }} {{ $name }}</li>
+        @endforeach
+    </ul>
+
+
+    <ul>
+        @foreach ($names as $name)
+            @if ($loop->first)
+                <li style="color:red">{{ $name }}</li>
+            @elseif ($loop->last)
+                <li style="color:green">{{ $name }}</li>
+            @else ($loop->first)
+                <li style="color:blue">{{ $name }}</li>
+            @endif
+        @endforeach
+    </ul>
+
+    {{ $user }}
+
+    @include('pages.footer')
+
 </body>
 </html>

@@ -10,10 +10,12 @@ Route::get('/post', function () {
     return view('post');
 })->name('myPost');
 
-Route::get('/about', function () {
+Route::get('/test', function () {
     return view('about');
 })->name('about');
 
+Route::redirect('/about', '/test', 301);
+ 
 // 1st Method
 
 // Route::get('/post/{id?}/', function (string $id = null) {

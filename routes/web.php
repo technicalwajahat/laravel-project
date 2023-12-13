@@ -2,35 +2,35 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
-// Route::get('/post', function () {
-//     return view('post');
-// })->name('myPost');
+Route::get('/post', function () {
+    return view('post');
+})->name('myPost');
 
-// Route::get('/test', function () {
-//     return view('about');
-// })->name('about');
+Route::get('/test', function () {
+    return view('about');
+})->name('about');
 
 
 // Route Prefix 
-Route::prefix('page')->group(function() {
-    Route::get('/', function () {
-        return view('home');
-    })->name('home');
+// Route::prefix('page')->group(function() {
+//     Route::get('/', function () {
+//         return view('home');
+//     })->name('home');
 
-    Route::get('/post', function () {
-        return view('post');
-    })->name('myPost'); 
+//     Route::get('/post', function () {
+//         return view('post');
+//     })->name('myPost'); 
 
-    Route::get('/test', function () {
-        return view('about');
-    })->name('about');
+//     Route::get('/test', function () {
+//         return view('about');
+//     })->name('about');
 
-    Route::redirect('/page/about', '/page/test', 301);
-});
+//     Route::redirect('/page/about', '/page/test', 301);
+// });
 
 
 Route::fallback(function() {

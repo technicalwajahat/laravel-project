@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
 </head>
-<body>
-    @include('pages.header', ['name' => 'Yahoo Baba'])
+<body> --}}
+    {{-- @php
+        $fruits = ["one" => "Apple", "two" => "Banana", "three" => "Orange"];
+        // $fruits = [];
+        $value = "waji";
+    @endphp --}}
 
-    <h1>Hello, Wajahat Asif</h1>
+    {{-- @include('pages.header', ['names' => $fruits]) --}}
+    {{-- @includeUnless(empty($value), 'pages.header', ['names' => $fruits]) --}}
+
+    {{-- Page Exsist --}}
+    {{-- @includeIf('pages.content') --}}
+
+    {{-- <h1>Hello, Wajahat Asif</h1>
     <a href="{{ route('myPost') }}">Post Page</a>
     <a href="{{ route('about') }}">About Page</a>
     <br><br>
@@ -19,35 +29,35 @@
     <br><br>
     {{ "<h1>Hello World</h1>" }}
     <br><br>
-    {!! "<h1>Wajahat Awan</h1>" !!}
-    {{-- {!! "<script>alert('KING!!!')</script>" !!} --}}
+    {!! "<h1>Wajahat Awan</h1>" !!} --}}
+    {{-- {!! "<script>alert('KING!!!')</script>" !!} --}}    
     {{-- !Comment Statment! --}}
 
-    @php
+    {{-- @php
         $user = "King Wajahat Awan!";
         $names = ["Salman Khan", "Shahrukh Khan", "Tiger Shroff"]
-    @endphp
+    @endphp --}}
 
-    <ul>
+    {{-- <ul>
     @foreach ($names as $name)
         <li>{{ $loop->count }} {{ $name }}</li>
     @endforeach
-    </ul>
+    </ul> --}}
 
-    <ul>
+    {{-- <ul>
         @foreach ($names as $name)
             <li>{{ $loop->iteration }} {{ $name }}</li>
         @endforeach
-    </ul>
+    </ul> --}}
 
-    <ul>
+    {{-- <ul>
         @foreach ($names as $name)
             <li>{{ $loop->index }} {{ $name }}</li>
         @endforeach
-    </ul>
+    </ul> --}}
 
 
-    <ul>
+    {{-- <ul>
         @foreach ($names as $name)
             @if ($loop->first)
                 <li style="color:red">{{ $name }}</li>
@@ -57,11 +67,20 @@
                 <li style="color:blue">{{ $name }}</li>
             @endif
         @endforeach
-    </ul>
+    </ul> --}}
 
-    {{ $user }}
-
-    @include('pages.footer')
-
+    {{-- {{ $user }} --}}
+{{-- 
 </body>
-</html>
+</html> --}}
+
+
+@extends('layouts.masterlayout')
+@section('content')
+    @parent
+    <h2>Home Page</h2>
+@endsection
+
+@section('title')
+    Home
+@endsection

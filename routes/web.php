@@ -10,9 +10,13 @@ Route::get('/post', function () {
     return view('post');
 })->name('myPost');
 
-Route::get('/test', function () {
+Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
 
 
 // Route Prefix 
@@ -33,11 +37,9 @@ Route::get('/test', function () {
 // });
 
 
-Route::fallback(function() {
-    return "<h1>Page Not Found!</h1>";
-});
-
-
+// Route::fallback(function() {
+//     return "<h1>Page Not Found!</h1>";
+// });
 
 // 1st Method
 // Route::get('/post/{id?}/', function (string $id = null) {

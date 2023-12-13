@@ -84,3 +84,7 @@
 @section('title')
     Home
 @endsection
+
+@push('scripts')
+    <script src="/example.js"></script>    
+@endpush

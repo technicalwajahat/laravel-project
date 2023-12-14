@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\TestingController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
+Route::get('/', [PageController::class, 'showUser']);
 
 Route::get('/post', function () {
     return view('post');
@@ -20,6 +23,23 @@ Route::get('/about', function () {
 Route::get('/test', function () {
     return view('test');
 })->name('test');
+
+
+// Route::get('/users', function () {
+//     return view('users', ['user' => "Waji Awan", "city" => "Lahore"]);
+// })->name('users');
+
+
+// Route::get('/users', function () {
+//     return view('users')
+//     ->with('user', 'Waji Awan')
+//     ->with('city', 'Lahore');
+// })->name('users'); ff
+
+
+// Route::get('/users/{id}', function ($id) {
+//     return "<h1>User : ". $id ."</h1>";
+// })->name('users');
 
 
 // Route Prefix 

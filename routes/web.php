@@ -6,13 +6,16 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+
 Route::get('/post', function () {
     return view('post');
 })->name('myPost');
 
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
 
 Route::get('/test', function () {
     return view('test');

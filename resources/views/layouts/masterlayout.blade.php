@@ -20,6 +20,5 @@
     <footer>This is Footer Page</footer>
 
     @stack('script')
-
 </body>
 </html>

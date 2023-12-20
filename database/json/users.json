@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Wajahat Awan",
+        "email" : "waji@gmail.com",
+        "age" : 23,
+        "city" : "Lahore"
+    },
+    {
+        "name" : "Daniyal Afzal",
+        "email" : "dani@gmail.com",
+        "age" : 24,
+        "city" : "Lahore" 
+    },
+    {
+        "name" : "Danish Bashir",
+        "email" : "danish@gmail.com",
+        "age" : 22,
+        "city" : "Lahore"
+    },
+    {
+        "name" : "Zulkifal Qayoom",
+        "email" : "zulki@gmail.com",
+        "age" : 22,
+        "city" : "Lahore"
+    },
+    {
+        "name" : "Hamza Jamil",
+        "email" : "hamza@gmail.com",
+        "age" : 20,
+        "city" : "Lahore"
+    }
+]

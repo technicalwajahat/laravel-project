@@ -8,7 +8,7 @@ use App\Http\Controllers\TestingController;
 //     return view('home');
 // })->name('home');
 
-Route::get('/', [PageController::class, 'showUser']);
+Route::get('/', [UserController::class, 'showUsers']);
 
 Route::get('/post', function () {
     return view('post');

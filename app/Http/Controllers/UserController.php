@@ -9,10 +9,22 @@ class UserController extends Controller
 {
     public function showUsers(){
         // $users = DB::table('users')->get();
-        $users = DB::table('users')->where('id', 2)->get();
+        // $users = DB::table('users')->where('id', 2)->get();
         // $users = DB::table('users')->find(2);
 
-        // return $users;
+        // $users = DB::table('users')
+        //             ->select('city')
+        //             ->distinct()
+        //             ->get();
+   
+        // $users = DB::table('users')
+        //             ->pluck('name');
+   
+        $users = DB::table('users')
+                    ->where('age', 22)
+                    ->get();
+
+        return $users;
         // dd($users);
         // dump($users);
 
@@ -20,11 +32,11 @@ class UserController extends Controller
         //     echo $user->name . "<br>";
         // }
 
-        return view('users', ['data' => $users]);
+        // return view('users', ['data' => $users]);
     }
 
     public function singleUser(string $id) {
-        $users = DB::table('users')->where('id', $id)->get(); 
-        return $users;
+        $user = DB::table('users')->where('id', $id)->get(); 
+        return view('user', ['data' => $user]);
     }
 }

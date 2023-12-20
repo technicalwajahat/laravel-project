@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TestingController;
+use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
 //     return view('home');
 // })->name('home');
 
 Route::get('/', [UserController::class, 'showUsers']);
+Route::get('/user/{id}', [UserController::class, 'singleUser'])->name('view.user');
 
 Route::get('/post', function () {
     return view('post');
@@ -34,7 +36,7 @@ Route::get('/test', function () {
 //     return view('users')
 //     ->with('user', 'Waji Awan')
 //     ->with('city', 'Lahore');
-// })->name('users'); ff
+// })->name('users');
 
 
 // Route::get('/users/{id}', function ($id) {

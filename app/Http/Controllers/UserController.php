@@ -68,4 +68,14 @@ class UserController extends Controller
             echo "<h1>Data Updated!</h1>";
         }
     }
+
+    public function deleteUser(string $id) {
+        $user = DB::table('users')
+                    ->where('id', $id)
+                    ->delete();
+        
+        if ($user) {
+            return redirect()->route('home');
+        }            
+    }
 }

@@ -11,6 +11,8 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [UserController::class, 'showUsers']);
 Route::get('/user/{id}', [UserController::class, 'singleUser'])->name('view.user');
+Route::get('/addUser', [UserController::class, 'addUser']);
+Route::get('/updateUser', [UserController::class, 'updateUser']);
 
 Route::get('/post', function () {
     return view('post');

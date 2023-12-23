@@ -11,23 +11,10 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [UserController::class, 'showUsers'])->name('home');
 Route::get('/user/{id}', [UserController::class, 'singleUser'])->name('view.user');
-Route::get('/addUser', [UserController::class, 'addUser']);
+Route::post('/add', [UserController::class, 'addUser'])->name('addUser');
 Route::get('/updateUser', [UserController::class, 'updateUser']);
 Route::get('/delete/{id}', [UserController::class, 'deleteUser'])->name('delete.user');
-
-Route::get('/post', function () {
-    return view('post');
-})->name('myPost');
-
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
+Route::view('newUser', '/addUser');
 
 
 // Route::get('/users', function () {

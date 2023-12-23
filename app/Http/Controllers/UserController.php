@@ -40,17 +40,17 @@ class UserController extends Controller
         return view('user', ['data' => $user]);
     }
 
-    public function addUser() {
+    public function addUser(Request $req) {
         $user = DB::table('users')
-                    ->insertOrIgnore([
-                        'name' => 'Kashif Awan',
-                        'email' => 'kashifawan@gmail.com',
-                        'age' => 26,
-                        'city' => 'Lahore'
+                    ->insert([
+                        'name' => $req->username,
+                        'email' => $req->useremail,
+                        'age' => $req->userage,
+                        'city' => $req->usercity
                     ]);
         
         if ($user) {
-            echo "<h1>Data Successfully Added!</h1>";
+            return redirect()->route('home');
         }
         else {
             echo "<h1>Data not Added!</h1>";   

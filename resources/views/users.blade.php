@@ -10,8 +10,9 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <h1>All Users List</h1>
             <div class="col-6">
+                <h1>All Users List</h1>
+                <a href="/newUser" class="btn btn-success w-25 btn-sm mb-3">Add New</a>
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>ID</th>
@@ -21,6 +22,7 @@
                         <th>City</th>
                         <th>View</th>
                         <th>Delete</th>
+                        <th>Update</th>
                     </tr>
                     @foreach ($data as $user)
                         <tr>
@@ -31,6 +33,7 @@
                             <td>{{ $user->city }}</td>
                             <td><a href="{{ route('view.user', $user->id)}}" class="btn btn-primary btn-sm">View</a></td>
                             <td><a href="{{ route('delete.user', $user->id)}}" class="btn btn-danger btn-sm">Delete</a></td>
+                            <td><a href="{{ route('update.user', $user->id)}}" class="btn btn-warning btn-sm">Update</a></td>
                         </tr>
                     @endforeach
                 </table>

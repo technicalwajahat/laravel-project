@@ -6,15 +6,19 @@ use App\Http\Controllers\TestingController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
-//     return view('home');
+//     return view('home'); 
 // })->name('home');
 
-Route::get('/', [UserController::class, 'showUsers'])->name('home');
-Route::get('/user/{id}', [UserController::class, 'singleUser'])->name('view.user');
-Route::post('/add', [UserController::class, 'addUser'])->name('addUser');
-Route::get('/updateUser', [UserController::class, 'updateUser']);
-Route::get('/delete/{id}', [UserController::class, 'deleteUser'])->name('delete.user');
-Route::view('newUser', '/addUser');
+
+Route::controller(UserController::class)->group(function(){
+    Route::get('/', 'showUsers')->name('home');
+    Route::get('/user/{id}', 'singleUser')->name('view.user');
+    Route::post('/add', 'addUser')->name('addUser');
+    Route::POST('/updateUser/{id}','updateUser')->name('update.user');
+    Route::GET('/updatePage/{id}', 'updatePage')->name('update.page');
+    Route::get('/delete/{id}', 'deleteUser')->name('delete.user');
+    Route::view('newUser', '/addUser');
+});
 
 
 // Route::get('/users', function () {

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function showUsers(){
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->orderBy('name')->paginate(1);
         // $users = DB::table('users')->where('id', 2)->get();
         // $users = DB::table('users')->find(2);
 
@@ -57,15 +57,25 @@ class UserController extends Controller
         }
     }
 
-    public function updateUser() {
+
+    public function updatePage(string $id) {
+        $user = DB::table('users')->find($id);
+        return view('updateUser', ['data' => $user]);
+    }
+
+
+    public function updateUser(Request $req, $id) {
         $user = DB::table('users')
-                    ->where('id', 1)
+                    ->where('id', $id)
                     ->update([
-                        'city' => "Sargodha"
+                        'name' => $req->username,
+                        'email' => $req->useremail,
+                        'age' => $req->userage,
+                        'city' => $req->usercity                    
                     ]);
 
         if ($user) {
-            echo "<h1>Data Updated!</h1>";
+            return redirect()->route('home');
         }
     }
 

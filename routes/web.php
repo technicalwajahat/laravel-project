@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\TestingController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
@@ -10,11 +8,11 @@ use App\Http\Controllers\UserController;
 // })->name('home');
 
 
-Route::controller(UserController::class)->group(function(){
+Route::controller(UserController::class)->group(function () {
     Route::get('/', 'showUsers')->name('home');
     Route::get('/user/{id}', 'singleUser')->name('view.user');
     Route::post('/add', 'addUser')->name('addUser');
-    Route::POST('/updateUser/{id}','updateUser')->name('update.user');
+    Route::POST('/updateUser/{id}', 'updateUser')->name('update.user');
     Route::GET('/updatePage/{id}', 'updatePage')->name('update.page');
     Route::get('/delete/{id}', 'deleteUser')->name('delete.user');
     Route::view('newUser', '/addUser');
@@ -36,7 +34,7 @@ Route::controller(UserController::class)->group(function(){
 // Route::get('/users/{id}', function ($id) {
 //     return "<h1>User : ". $id ."</h1>";
 // })->name('users');
-
+v
 
 // Route Prefix 
 // Route::prefix('page')->group(function() {

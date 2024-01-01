@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function showUsers(){
-        $users = DB::table('users')->orderBy('name')->paginate(1);
+        $users = DB::table('users')->get();
         // $users = DB::table('users')->where('id', 2)->get();
         // $users = DB::table('users')->find(2);
 

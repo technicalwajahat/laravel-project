@@ -42,10 +42,7 @@
                             <td><a href="{{ route('update.page', $user->id)}}" class="btn btn-warning btn-sm">Update</a></td>
                         </tr>
                     @endforeach
-                </table>
-                <div class="mt-5">
-                    {{ $data->links('pagination::bootstrap-5') }}
-                </div>
+                </table>            
             </div>
         </div>
     </div>

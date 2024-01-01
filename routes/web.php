@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\TestingController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
@@ -34,7 +36,7 @@ Route::controller(UserController::class)->group(function () {
 // Route::get('/users/{id}', function ($id) {
 //     return "<h1>User : ". $id ."</h1>";
 // })->name('users');
-v
+
 
 // Route Prefix 
 // Route::prefix('page')->group(function() {
